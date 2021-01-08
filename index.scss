@@ -1,0 +1,189 @@
+
+// variables
+$prime-color: #F2994A;
+$font-title: 'Playfair Display', serif;
+$font-desc: 'Montserrat', sans-serif;
+
+@mixin flex-box ($var1: none, $var2: none) {
+    display: flex;
+    justify-content: $var1;
+    align-items: $var2;
+}
+
+@mixin font-size ($font-style: normal, $font-size: 1rem, $line-height: normal, $font-weight: normal) {
+    font-style: $font-style;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+*, *::befor, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    // overflow: hidden;
+    font-family: $font-desc;
+    @include font-size(none, 16px, 25px, 400);
+}
+.title, .ingredients > p, .instructions > p {
+    font-family: $font-title;
+}
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+    .intro {
+        .title {
+            @include font-size(normal, a, 63px, 700)
+        }
+        .photo {
+            width: 100%;
+            margin-top: 30px;
+        }
+        .desc {
+            @include flex-box(flex-start, flex-start);
+            height: max-content;
+            img {
+                margin: 20px 10px 0 0;
+            }
+            p {
+                @include font-size(italic, 14px, 17px, 500);
+                width: 50%;
+            }
+        }
+    }
+    .content {
+        width: 100%;
+        @include flex-box(flex-end, flex-start);
+        flex-direction: row-reverse;
+        // justify-items: center;
+        .yields {
+            width: 40%;
+            margin-top: 50px;
+            .container {
+                width: 80%;
+                margin: 0 0 auto auto;
+                margin-bottom: 20px;
+                @include flex-box(flex-start, center);
+                .icon {
+                    margin: 10px;
+                    img {
+                        height: 30px;
+                    }
+                }
+                .items {
+                    .items-name {
+                        @include font-size(n, 10px, 12px, 700);
+                    }
+                    .items-value {
+                        @include font-size(n, 14px, 17px, 500);
+                    }
+                }
+            }
+        }
+        .recipe {
+            width: 60%;
+            padding-right: 100px;
+            margin-bottom: 50px;
+            .ingredients {
+                .component {
+                    .component-items {
+                        .check-boxes {
+                            margin: 7px 0;
+                            input[type = checkbox] {
+                                margin-right: 20px;
+                                transform: scale(1.5);
+                            }
+                            display: flex;
+                        }
+                    }
+                    .component-name>p{
+                        font-family: $font-title;
+                        @include font-size(italic, 18px, 24px, 400);
+                    }
+                }
+            }
+            .instructions {
+                h2 {
+                    @include font-size(none, 24px, 32px, 700);
+                }
+                .instruction-items {
+                    margin-bottom: 20px;
+                    @include flex-box(flex-end, flex-start);
+                    .instruciton-num {
+                        p {
+                            font-family: $font-title;
+                            width: 35px;
+                            background-color: $prime-color;
+                            padding-bottom: 5px;
+                            margin-top: 5px;
+                            text-align: center;
+                            border-radius: 6px;
+                            color: white;
+                            @include font-size(none, 24px, 32px, bold);
+                        }
+                        margin-right: 20px;
+                        
+                    }
+                    .instruction-content {
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        p {
+            text-align: center;
+            color: #a9a9a9;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        @include font-size(none, 14px, 25px, 400);
+    }
+    #wrapper {
+        width: 90%;
+        .intro {
+            .title {
+                @include font-size(normal, none, 32px, 700);
+            }
+            .desc {
+                p {
+                    width: 100%;
+                }
+            }
+        }
+        .content {
+            flex-direction: column;
+            
+            .yields {
+                width: 100%;
+                @include flex-box(center, center);
+                flex-wrap: wrap; 
+                .container {
+                    flex: 1 1 auto;
+                    width: max-content;
+                    .items {
+                        .items-name {
+                            @include font-size(none, 10px, 12px, 500);
+                        }
+                        .items-value {
+                            @include font-size(none, 12px, 12px, 400);
+                        }
+                    }
+                    &:first-child {
+                        flex-basis: 100%;
+                        // width: 100%;
+                    }
+                }
+                
+            }
+            .recipe {
+                width: 100%   ;
+            }
+        }
+    }
+}

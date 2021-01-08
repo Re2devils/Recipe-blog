@@ -1,0 +1,197 @@
+*, *::befor, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: none;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.title, .ingredients > p, .instructions > p {
+  font-family: "Playfair Display", serif;
+}
+
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+#wrapper .intro .title {
+  font-style: normal;
+  font-size: a;
+  line-height: 63px;
+  font-weight: 700;
+}
+#wrapper .intro .photo {
+  width: 100%;
+  margin-top: 30px;
+}
+#wrapper .intro .desc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: max-content;
+}
+#wrapper .intro .desc img {
+  margin: 20px 10px 0 0;
+}
+#wrapper .intro .desc p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  width: 50%;
+}
+#wrapper .content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+#wrapper .content .yields {
+  width: 40%;
+  margin-top: 50px;
+}
+#wrapper .content .yields .container {
+  width: 80%;
+  margin: 0 0 auto auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#wrapper .content .yields .container .icon {
+  margin: 10px;
+}
+#wrapper .content .yields .container .icon img {
+  height: 30px;
+}
+#wrapper .content .yields .container .items .items-name {
+  font-style: n;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 700;
+}
+#wrapper .content .yields .container .items .items-value {
+  font-style: n;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+#wrapper .content .recipe {
+  width: 60%;
+  padding-right: 100px;
+  margin-bottom: 50px;
+}
+#wrapper .content .recipe .ingredients .component .component-items .check-boxes {
+  margin: 7px 0;
+  display: flex;
+}
+#wrapper .content .recipe .ingredients .component .component-items .check-boxes input[type=checkbox] {
+  margin-right: 20px;
+  transform: scale(1.5);
+}
+#wrapper .content .recipe .ingredients .component .component-name > p {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+#wrapper .content .recipe .instructions h2 {
+  font-style: none;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+#wrapper .content .recipe .instructions .instruction-items {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+#wrapper .content .recipe .instructions .instruction-items .instruciton-num {
+  margin-right: 20px;
+}
+#wrapper .content .recipe .instructions .instruction-items .instruciton-num p {
+  font-family: "Playfair Display", serif;
+  width: 35px;
+  background-color: #F2994A;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  font-style: none;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+}
+#wrapper .content .recipe .instructions .instruction-items .instruction-content {
+  text-align: justify;
+}
+#wrapper footer p {
+  text-align: center;
+  color: #a9a9a9;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-style: none;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+
+  #wrapper {
+    width: 90%;
+  }
+  #wrapper .intro .title {
+    font-style: normal;
+    font-size: none;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  #wrapper .intro .desc p {
+    width: 100%;
+  }
+  #wrapper .content {
+    flex-direction: column;
+  }
+  #wrapper .content .yields {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #wrapper .content .yields .container {
+    flex: 1 1 auto;
+    width: max-content;
+  }
+  #wrapper .content .yields .container .items .items-name {
+    font-style: none;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+  }
+  #wrapper .content .yields .container .items .items-value {
+    font-style: none;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+  }
+  #wrapper .content .yields .container:first-child {
+    flex-basis: 100%;
+  }
+  #wrapper .content .recipe {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
